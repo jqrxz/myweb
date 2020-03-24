@@ -1,0 +1,90 @@
+body {
+    background: #f6f6f6;
+}
+
+.style_header {
+    height: 5rem;
+    align-items: center;
+}
+
+.style_nav {
+    height: 3rem;
+    position: sticky;   /* 粘性布局 */
+    top: 0rem;           /* 位置为页面顶端 */
+    background-color: #96b97d;
+    z-index: 10;  /* 堆叠顺序 */
+}
+
+.style_sidebarLeft {
+    padding: 0rem;
+    position: sticky;   /* 粘性布局 */
+    top: 3rem;          /* 位置为导航栏下方 */
+    height: calc(100vh - 3rem);     /* 高度 = 页面高度 - 导航栏高度 */
+    border-right: 1px solid rgba(0, 0, 0, .1);
+}
+
+.style_search {
+    height: 4rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+
+.style_searchBtn {
+    color: #fff;
+    background-color: #96b97d;
+    border-color: #96b97d;
+}
+
+.style_navLeft {
+    height: calc(100vh - 5rem - 3rem - 4rem);    /* 固定高度 = 页面高度 - 头部高度 - 导航栏高度 - 搜索框高度 */
+    align-items: flex-start;    /* 垂直方向由上到下 */
+    overflow-y: auto;     /* 内容溢出自动添加滚动条 */
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+
+.style_card {
+    height: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.style_article {
+    background-color: #f6f6f6;
+    position: sticky;
+    top: 3rem;
+    z-index: 1;
+}
+
+.style_article>section[id]>h4::before {     /* 在h4标题前撑起一定高度，避免粘性导航栏遮挡标题 */
+    display: block;
+    height: 4rem;
+    margin-top: -4rem;
+    content: "";
+}
+
+@media screen and (max-width: 1200px){
+    .style_sidebarRight {
+        display: none;
+    }
+}
+
+.style_sidebarRight {
+    padding: 0rem;
+    position: sticky;
+    top: 3rem;
+    height: calc(100vh - 3rem);     /* 高度 = 页面高度 - 导航栏高度 */
+    
+}
+
+.style_navRight {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+    max-height: calc(100vh - 3rem - 3rem);      /* 最大高度 = 页面高度 - 导航栏高度 - 上下margin */
+    overflow-y: auto;
+    border-left: 1px solid rgba(0, 0, 0, .1);
+}
