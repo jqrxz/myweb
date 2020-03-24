@@ -14,13 +14,51 @@ body {
     background-color: #96b97d;
     z-index: 10;  /* 堆叠顺序 */
 }
+@media screen and (max-width: 576px){
+    .style_nav {
+        display: none;
+    }
+}
+
+.style_nav_sm {
+    height: 3rem;
+    position: sticky;   /* 粘性布局 */
+    top: 0rem;           /* 位置为页面顶端 */
+    background-color: #96b97d;
+    z-index: 10;  /* 堆叠顺序 */
+}
+@media screen and (min-width: 576px){
+    .style_nav_sm {
+        display: none;
+    }
+}
+
+.style_dropdownMenu {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    margin-top: 0rem;
+    width: calc(100% - 1rem);
+    text-align: center;
+}
+.style_dropdownItem {
+    width: 33.33%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
 
 .style_sidebarLeft {
+    background-color: #f6f6f6;
     padding: 0rem;
     position: sticky;   /* 粘性布局 */
     top: 3rem;          /* 位置为导航栏下方 */
     height: calc(100vh - 3rem);     /* 高度 = 页面高度 - 导航栏高度 */
     border-right: 1px solid rgba(0, 0, 0, .1);
+    z-index: 10;
+}
+@media screen and (max-width: 576px){
+    .style_sidebarLeft {
+        display: none;
+    }
 }
 
 .style_search {
@@ -52,31 +90,44 @@ body {
 }
 
 .style_article {
-    background-color: #f6f6f6;
     position: sticky;
     top: 3rem;
-    z-index: 1;
+    z-index: 0;
+}
+
+.style_breadcrumb {
+    margin-left: -15px;
+    margin-right: -15px;
+    background-image: linear-gradient(to right, #e9ecef, #f6f6f6);
+
+    position: sticky;   /* 粘性布局 */
+    top: 3rem;          /* 位置为导航栏下方 */
+    /* height: calc(100vh - 3rem);     高度 = 页面高度 - 导航栏高度 */
+
+    z-index: 10;
+}
+.style_breadcrumbText {
+    color: #96b97d;
 }
 
 .style_article>section[id]>h4::before {     /* 在h4标题前撑起一定高度，避免粘性导航栏遮挡标题 */
     display: block;
-    height: 4rem;
-    margin-top: -4rem;
+    height: 6rem;
+    margin-top: -6rem;
     content: "";
 }
 
-@media screen and (max-width: 1200px){
-    .style_sidebarRight {
-        display: none;
-    }
-}
 
 .style_sidebarRight {
     padding: 0rem;
     position: sticky;
     top: 3rem;
     height: calc(100vh - 3rem);     /* 高度 = 页面高度 - 导航栏高度 */
-    
+}
+@media screen and (max-width: 1200px){
+    .style_sidebarRight {
+        display: none;
+    }
 }
 
 .style_navRight {
